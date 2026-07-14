@@ -1,36 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { apiClient, withBasePath } from "@/lib/api-client";
+import { apiClient } from "@/lib/api-client";
 import { useAuth } from "@/context/AuthContext";
 import ClockButton from "@/components/ClockButton";
-import type { AttendanceResponse, ErrorResponse, LoginResponse } from "@/types/api";
+import type { AttendanceResponse, ErrorResponse } from "@/types/api";
 
 export default function HomePage() {
-  const { user, setUser } = useAuth();
+  const { user, isReady } = useAuth();
   const [status, setStatus] = useState<AttendanceResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!user) {
-      autoLogin();
-      return;
+    if (!isReady) return;
+    if (user) {
+      fetchStatus();
+    } else {
+      setLoading(false);
     }
-    fetchStatus();
-  }, [user]);
-
-  const autoLogin = async () => {
-    try {
-      const response = await apiClient<LoginResponse>("/auth/login", {
-        method: "POST",
-        body: JSON.stringify({ username: "yamada" }),
-      });
-      setUser(response);
-    } catch {
-      window.location.href = withBasePath("/login");
-    }
-  };
+  }, [user, isReady]);
 
   const fetchStatus = async () => {
     try {
@@ -73,6 +62,7 @@ export default function HomePage() {
     }
   };
 
+  if (!isReady) return null;
   if (!user) return null;
 
   const today = new Date();
