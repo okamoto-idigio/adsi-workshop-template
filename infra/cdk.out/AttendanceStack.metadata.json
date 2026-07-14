@@ -1,0 +1,682 @@
+{
+  "/AttendanceStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/LoadBalancerDNS": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LoadBalancerDNS"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:65:5)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Vpc8378EB38"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/IGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcIGWD7BA715C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/VPCGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcVPCGWBF912B6E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Cluster/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ClusterEB0386A7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Cluster2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:18:21)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/TaskDef/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDef54694570"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new FargateTaskDefinition2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:20:28)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/LoadBalancerDNS": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceLoadBalancerDNSEC5B149E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/ServiceURL": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceServiceURL250C0FB6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/Service": [
+    {
+      "type": "aws:cdk:warning",
+      "data": "Enable the 'circuitBreaker' property to trigger a quicker deployment failure if tasks are failing to come start (without this setting deployments may take up to 3 hours to fail). [ack: @aws-cdk/aws-ecs:shouldUseCircuitBreaker]",
+      "trace": [
+        "Annotations.addMessage (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/annotations.js:1:3441)",
+        "Annotations.addWarningV2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/annotations.js:1:2129)",
+        "new BaseService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ecs/lib/base/base-service.js:1:14671)",
+        "new BaseService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/no-box-stack-traces.js:1:345)",
+        "new FargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ecs/lib/fargate/fargate-service.js:1:7829)",
+        "new FargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/prop-injectable.js:1:855)",
+        "new ApplicationLoadBalancedFargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:1:7416)",
+        "new ApplicationLoadBalancedFargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/prop-injectable.js:1:855)",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "Object.<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "Module._compile (node:internal/modules/cjs/loader:1781:14)",
+        "Module.m._compile (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/index.ts:1618:23)",
+        "node:internal/modules/cjs/loader:1913:10",
+        "Object.require.extensions.<computed> [as .ts] (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/index.ts:1621:12)",
+        "Module.load (node:internal/modules/cjs/loader:1505:32)",
+        "Function._load (node:internal/modules/cjs/loader:1309:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:254:19)",
+        "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "phase4 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:649:14)",
+        "bootstrap (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:95:10)",
+        "main (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:55:10)",
+        "Object.<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:800:3)",
+        "Module._compile (node:internal/modules/cjs/loader:1781:14)",
+        "Object.<anonymous> (node:internal/modules/cjs/loader:1913:10)",
+        "Module.load (node:internal/modules/cjs/loader:1505:32)",
+        "Function._load (node:internal/modules/cjs/loader:1309:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:254:19)",
+        "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "node:internal/main/run_main_module:36:49"
+      ]
+    },
+    {
+      "type": "aws:cdk:warning",
+      "data": "minHealthyPercent has not been configured so the default value of 50% is used. The number of running tasks will decrease below the desired count during deployments etc. See https://github.com/aws/aws-cdk/issues/31705 [ack: @aws-cdk/aws-ecs:minHealthyPercent]",
+      "trace": [
+        "Annotations.addMessage (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/annotations.js:1:3441)",
+        "Annotations.addWarningV2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/annotations.js:1:2129)",
+        "new BaseService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ecs/lib/base/base-service.js:1:16295)",
+        "new BaseService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/no-box-stack-traces.js:1:345)",
+        "new FargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ecs/lib/fargate/fargate-service.js:1:7829)",
+        "new FargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/prop-injectable.js:1:855)",
+        "new ApplicationLoadBalancedFargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ecs-patterns/lib/fargate/application-load-balanced-fargate-service.js:1:7416)",
+        "new ApplicationLoadBalancedFargateService2 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/core/lib/prop-injectable.js:1:855)",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "Object.<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "Module._compile (node:internal/modules/cjs/loader:1781:14)",
+        "Module.m._compile (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/index.ts:1618:23)",
+        "node:internal/modules/cjs/loader:1913:10",
+        "Object.require.extensions.<computed> [as .ts] (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/index.ts:1621:12)",
+        "Module.load (node:internal/modules/cjs/loader:1505:32)",
+        "Function._load (node:internal/modules/cjs/loader:1309:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:254:19)",
+        "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "phase4 (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:649:14)",
+        "bootstrap (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:95:10)",
+        "main (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:55:10)",
+        "Object.<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/node_modules/ts-node/src/bin.ts:800:3)",
+        "Module._compile (node:internal/modules/cjs/loader:1781:14)",
+        "Object.<anonymous> (node:internal/modules/cjs/loader:1913:10)",
+        "Module.load (node:internal/modules/cjs/loader:1505:32)",
+        "Function._load (node:internal/modules/cjs/loader:1309:12)",
+        "wrapModuleLoad (node:internal/modules/cjs/loader:254:19)",
+        "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)",
+        "node:internal/main/run_main_module:36:49"
+      ]
+    }
+  ],
+  "/AttendanceStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet1Subnet5C2D37C4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet1RouteTable6C95E38E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet1RouteTableAssociation97140677"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet1DefaultRoute3DA9E72A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:208 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet1/EIP": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet1EIPD7E02669"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet1/NATGateway": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet1NATGateway4D7517AA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet2Subnet691E08A3"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet2RouteTable94F7E489"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet2RouteTableAssociationDD5762D8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PublicSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPublicSubnet2DefaultRoute97F91067"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:208 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet1Subnet536B997A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet1RouteTableB2C5B500"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet1RouteTableAssociation70C59FA6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet1DefaultRouteBE02A9ED"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet2Subnet3788AAA1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet2RouteTableA678073B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet2RouteTableAssociationA89CAD56"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        ".../home/sagemaker-user/adsi-workshop-template/infra/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Vpc/PrivateSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "VpcPrivateSubnet2DefaultRoute060D2087"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Vpc2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:13:17)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/AttendanceStack/TaskDef/TaskRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefTaskRole1EDB4A67"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new FargateTaskDefinition2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:20:28)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/TaskDef/ExecutionRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefExecutionRoleB4775C97"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/LB/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceLBE9A1ADBC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/Service/Service": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "Service9571FDD8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/AttendanceStack/TaskDef/backend/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefbackendLogGroup15A95F50"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.<anonymous> in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:25:20)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)"
+      ]
+    }
+  ],
+  "/AttendanceStack/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDefExecutionRoleDefaultPolicy0DBB737A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/TaskDef/frontend/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TaskDeffrontendLogGroup93B27A34"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.<anonymous> in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:37:20)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/LB/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceLBSecurityGroupF7435A5C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/LB/SecurityGroup/to AttendanceStackServiceSecurityGroupF81E53BD:8080": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceLBSecurityGrouptoAttendanceStackServiceSecurityGroupF81E53BD8080CAD46F96"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/LB/PublicListener/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceLBPublicListener46709EAA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/Service/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceSecurityGroupEEA09B68"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)",
+        "<anonymous> (/home/sagemaker-user/adsi-workshop-template/infra/bin/app.ts:7:1)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/Service/SecurityGroup/from AttendanceStackServiceLBSecurityGroupB32257D3:8080": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceSecurityGroupfromAttendanceStackServiceLBSecurityGroupB32257D38080CAFBC919"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/AttendanceStack/Service/LB/PublicListener/ECSGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ServiceLBPublicListenerECSGroup0CC8688C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new ApplicationLoadBalancedFargateService2 in aws-cdk-lib...",
+        "new AttendanceStack (/home/sagemaker-user/adsi-workshop-template/infra/lib/attendance-stack.ts:47:7)"
+      ]
+    }
+  ]
+}
