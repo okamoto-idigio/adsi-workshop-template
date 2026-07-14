@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { apiClient, withBasePath } from "@/lib/api-client";
 import { useAuth } from "@/context/AuthContext";
-import Header from "@/components/Header";
 import ClockButton from "@/components/ClockButton";
 import type { AttendanceResponse, ErrorResponse, LoginResponse } from "@/types/api";
 
@@ -94,8 +93,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header user={user} />
+    <div className="flex-1 flex flex-col">
       <main className="flex-1 flex items-center justify-center">
         {loading ? (
           <p className="text-gray-500">読み込み中...</p>

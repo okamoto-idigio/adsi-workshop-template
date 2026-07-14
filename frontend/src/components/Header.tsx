@@ -14,7 +14,7 @@ export default function Header({ user }: HeaderProps) {
   if (!user) return null;
 
   const navItems = [
-    { href: "/", label: "打刻" },
+    { href: "/home", label: "打刻" },
     { href: "/attendance", label: "勤怠一覧" },
   ];
 
