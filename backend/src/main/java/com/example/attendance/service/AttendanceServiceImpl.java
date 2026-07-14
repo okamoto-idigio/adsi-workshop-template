@@ -3,6 +3,7 @@ package com.example.attendance.service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.YearMonth;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,6 +24,8 @@ import com.example.attendance.repository.EmployeeRepository;
 @Service
 public class AttendanceServiceImpl implements AttendanceService {
 
+    private static final ZoneId JST = ZoneId.of("Asia/Tokyo");
+
     private final AttendanceRecordRepository attendanceRecordRepository;
     private final EmployeeRepository employeeRepository;
     private final WorkDurationCalculator workDurationCalculator;
@@ -38,7 +41,7 @@ public class AttendanceServiceImpl implements AttendanceService {
     @Override
     @Transactional
     public AttendanceResponse clockIn(Long employeeId) {
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now(JST);
         attendanceRecordRepository.findByEmployeeIdAndWorkDate(employeeId, today)
                 .ifPresent(record -> {
                     throw new AttendanceValidationException("本日は既に出勤打刻されています");
@@ -47,7 +50,7 @@ public class AttendanceServiceImpl implements AttendanceService {
         AttendanceRecord record = AttendanceRecord.builder()
                 .employeeId(employeeId)
                 .workDate(today)
-                .clockInTime(LocalTime.now())
+                .clockInTime(LocalTime.now(JST))
                 .build();
         AttendanceRecord saved = attendanceRecordRepository.save(record);
         return toAttendanceResponse(saved);
@@ -56,7 +59,7 @@ public class AttendanceServiceImpl implements AttendanceService {
     @Override
     @Transactional
     public AttendanceResponse clockOut(Long employeeId) {
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now(JST);
         AttendanceRecord record = attendanceRecordRepository.findByEmployeeIdAndWorkDate(employeeId, today)
                 .orElseThrow(() -> new AttendanceValidationException("出勤打刻がされていません"));
 
@@ -64,14 +67,14 @@ public class AttendanceServiceImpl implements AttendanceService {
             throw new AttendanceValidationException("本日は既に退勤打刻されています");
         }
 
-        record.setClockOutTime(LocalTime.now());
+        record.setClockOutTime(LocalTime.now(JST));
         AttendanceRecord saved = attendanceRecordRepository.save(record);
         return toAttendanceResponse(saved);
     }
 
     @Override
     public AttendanceResponse getTodayStatus(Long employeeId) {
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now(JST);
         return attendanceRecordRepository.findByEmployeeIdAndWorkDate(employeeId, today)
                 .map(this::toAttendanceResponse)
                 .orElse(new AttendanceResponse(today, null, null, null));
