@@ -15,10 +15,21 @@ function fetchAttendance(
   );
 }
 
+function getJstYearMonth(): { year: number; month: number } {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "numeric",
+  }).formatToParts(new Date());
+  const year = Number(parts.find((p) => p.type === "year")!.value);
+  const month = Number(parts.find((p) => p.type === "month")!.value);
+  return { year, month };
+}
+
 export default function AttendancePage() {
-  const now = new Date();
-  const [year, setYear] = useState(now.getFullYear());
-  const [month, setMonth] = useState(now.getMonth() + 1);
+  const jst = getJstYearMonth();
+  const [year, setYear] = useState(jst.year);
+  const [month, setMonth] = useState(jst.month);
   const [records, setRecords] = useState<AttendanceResponse[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
