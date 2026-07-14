@@ -1,0 +1,270 @@
+openapi: 3.0.3
+info:
+  title: 勤怠管理アプリ API
+  version: 1.0.0
+  description: 勤怠管理アプリ MVP の REST API 定義
+
+paths:
+  /api/auth/login:
+    post:
+      summary: ログイン
+      description: ユーザー名でログインする（パスワード不要）
+      operationId: login
+      tags: [認証]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: ログイン成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: ユーザーが見つからない
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/attendance/clock-in:
+    post:
+      summary: 出勤打刻
+      description: 現在時刻で出勤を記録する
+      operationId: clockIn
+      tags: [打刻]
+      responses:
+        '200':
+          description: 打刻成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttendanceResponse'
+        '400':
+          description: バリデーションエラー（既に出勤済み等）
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: 未ログイン
+
+  /api/attendance/clock-out:
+    post:
+      summary: 退勤打刻
+      description: 現在時刻で退勤を記録する
+      operationId: clockOut
+      tags: [打刻]
+      responses:
+        '200':
+          description: 打刻成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttendanceResponse'
+        '400':
+          description: バリデーションエラー（未出勤、既に退勤済み等）
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: 未ログイン
+
+  /api/attendance/me:
+    get:
+      summary: 自分の月次勤怠一覧
+      description: ログイン中の社員の指定月の勤怠を取得する
+      operationId: getMyAttendance
+      tags: [勤怠一覧]
+      parameters:
+        - name: year
+          in: query
+          required: true
+          schema:
+            type: integer
+            example: 2026
+        - name: month
+          in: query
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 12
+            example: 7
+      responses:
+        '200':
+          description: 月次勤怠一覧
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonthlyAttendanceResponse'
+        '401':
+          description: 未ログイン
+
+  /api/attendance/all:
+    get:
+      summary: 全社員の月次勤怠一覧（管理者用）
+      description: 全社員の指定月の勤怠を取得する（管理者のみ）。社員IDで絞り込み可能
+      operationId: getAllAttendance
+      tags: [勤怠一覧]
+      parameters:
+        - name: year
+          in: query
+          required: true
+          schema:
+            type: integer
+            example: 2026
+        - name: month
+          in: query
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 12
+            example: 7
+        - name: employeeId
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int64
+          description: 指定時はその社員のみ。省略時は全社員
+      responses:
+        '200':
+          description: 全社員の月次勤怠一覧
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeMonthlyAttendance'
+        '401':
+          description: 未ログイン
+        '403':
+          description: 権限不足（管理者のみ）
+
+  /api/employees:
+    get:
+      summary: 社員一覧取得（管理者用）
+      description: 全社員の一覧を取得する（管理者のみ）。社員選択ドロップダウンに使用
+      operationId: getEmployees
+      tags: [社員]
+      responses:
+        '200':
+          description: 社員一覧
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EmployeeSummary'
+        '401':
+          description: 未ログイン
+        '403':
+          description: 権限不足（管理者のみ）
+
+  /api/attendance/status:
+    get:
+      summary: 当日の打刻状態
+      description: ログイン中の社員の本日の打刻状態を取得する
+      operationId: getTodayStatus
+      tags: [打刻]
+      responses:
+        '200':
+          description: 当日の打刻状態
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AttendanceResponse'
+        '401':
+          description: 未ログイン
+
+components:
+  schemas:
+    LoginRequest:
+      type: object
+      required: [username]
+      properties:
+        username:
+          type: string
+          example: tanaka
+
+    LoginResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+        name:
+          type: string
+        role:
+          type: string
+          enum: [ADMIN, EMPLOYEE]
+
+    AttendanceResponse:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        clockInTime:
+          type: string
+          format: time
+          nullable: true
+        clockOutTime:
+          type: string
+          format: time
+          nullable: true
+        workDurationMinutes:
+          type: integer
+          nullable: true
+          description: 勤務時間（分）。退勤前は null
+
+    MonthlyAttendanceResponse:
+      type: object
+      properties:
+        year:
+          type: integer
+        month:
+          type: integer
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttendanceResponse'
+
+    EmployeeMonthlyAttendance:
+      type: object
+      properties:
+        employeeId:
+          type: integer
+          format: int64
+        employeeName:
+          type: string
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/AttendanceResponse'
+
+    EmployeeSummary:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: string
